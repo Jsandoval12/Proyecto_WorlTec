@@ -32,7 +32,7 @@ namespace Proyecto_WorldTec
 
         private void MenuPrincipal2_Load(object sender, EventArgs e)
         {
-            Login();
+          //  Login();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -78,7 +78,13 @@ namespace Proyecto_WorldTec
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (MessageBox.Show("¿Seguro(a) que desea Cerrar la sesión actual?",
+              "Cerrar Sesión",
+              MessageBoxButtons.YesNo,
+              MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Login();
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BL.Tecnologia;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,41 +13,48 @@ namespace Proyecto_WorldTec
 {
     public partial class FormLogin : Form
     {
+        SeguridadBL _seguridad;
         public FormLogin()
         {
             InitializeComponent();
+            _seguridad = new SeguridadBL();
            
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Application.Exit();
-
+            if (MessageBox.Show("¿Desea Cerrar el Sistema?",
+             "Saliendo del Sistema",
+             MessageBoxButtons.YesNo,
+             MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             string usuario;
             string contrasena;
 
             usuario = textBox1.Text;
             contrasena = textBox2.Text;
 
-            if (usuario == "Admin21" && contrasena == "unahvs" ||  (usuario == "Jona7" && contrasena == "jona123") || (usuario == "Carlos7" && contrasena == "carlos123"))
+            var resultado = _seguridad.Autorizar(usuario, contrasena);
+            
+            if (resultado == true)
             {
-                MessageBox.Show("Bienvenido al Sistema");
+                MessageBox.Show("Bienvenido al Sistema" + " " + usuario);
                 this.Close();
             }
-            else
+            else if ( resultado == false)
             {
-                MessageBox.Show("Usuario o Contraseña Incorrectos");
+                MessageBox.Show("Usuario o Contraseña incorrecta");
                 textBox1.Text = "";
                 textBox2.Text = "";
+
             }
-
-          
-
-
         }
 
         private void FormLogin_Load(object sender, EventArgs e)

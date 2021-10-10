@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lbfecha = new System.Windows.Forms.Label();
+            this.lbhora = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.SubmenuUsuario = new System.Windows.Forms.Panel();
             this.button7 = new System.Windows.Forms.Button();
@@ -46,14 +49,11 @@
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.lbfecha = new System.Windows.Forms.Label();
-            this.lbhora = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SubmenuUsuario.SuspendLayout();
             this.Submenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -76,6 +76,39 @@
             this.panel1.Size = new System.Drawing.Size(303, 741);
             this.panel1.TabIndex = 3;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.lbfecha);
+            this.panel2.Controls.Add(this.lbhora);
+            this.panel2.Location = new System.Drawing.Point(23, 557);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(268, 64);
+            this.panel2.TabIndex = 9;
+            // 
+            // lbfecha
+            // 
+            this.lbfecha.AutoSize = true;
+            this.lbfecha.BackColor = System.Drawing.Color.Transparent;
+            this.lbfecha.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbfecha.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbfecha.Location = new System.Drawing.Point(3, 43);
+            this.lbfecha.Name = "lbfecha";
+            this.lbfecha.Size = new System.Drawing.Size(52, 16);
+            this.lbfecha.TabIndex = 8;
+            this.lbfecha.Text = "label2";
+            // 
+            // lbhora
+            // 
+            this.lbhora.AutoSize = true;
+            this.lbhora.BackColor = System.Drawing.Color.Transparent;
+            this.lbhora.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbhora.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lbhora.Location = new System.Drawing.Point(3, 5);
+            this.lbhora.Name = "lbhora";
+            this.lbhora.Size = new System.Drawing.Size(52, 16);
+            this.lbhora.TabIndex = 7;
+            this.lbhora.Text = "label1";
+            // 
             // button6
             // 
             this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(43)))), ((int)(((byte)(76)))));
@@ -86,7 +119,7 @@
             this.button6.ForeColor = System.Drawing.Color.White;
             this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(0, 646);
+            this.button6.Location = new System.Drawing.Point(0, 640);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(305, 53);
             this.button6.TabIndex = 8;
@@ -98,9 +131,9 @@
             // 
             this.SubmenuUsuario.Controls.Add(this.button7);
             this.SubmenuUsuario.Controls.Add(this.button5);
-            this.SubmenuUsuario.Location = new System.Drawing.Point(66, 401);
+            this.SubmenuUsuario.Location = new System.Drawing.Point(68, 266);
             this.SubmenuUsuario.Name = "SubmenuUsuario";
-            this.SubmenuUsuario.Size = new System.Drawing.Size(235, 104);
+            this.SubmenuUsuario.Size = new System.Drawing.Size(229, 104);
             this.SubmenuUsuario.TabIndex = 7;
             this.SubmenuUsuario.Visible = false;
             // 
@@ -114,7 +147,7 @@
             this.button7.ForeColor = System.Drawing.Color.White;
             this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
             this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(6, 54);
+            this.button7.Location = new System.Drawing.Point(3, 3);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(220, 47);
             this.button7.TabIndex = 9;
@@ -132,7 +165,7 @@
             this.button5.ForeColor = System.Drawing.Color.White;
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(6, 3);
+            this.button5.Location = new System.Drawing.Point(7, 48);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(202, 53);
             this.button5.TabIndex = 8;
@@ -150,9 +183,9 @@
             this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(0, 345);
+            this.button4.Location = new System.Drawing.Point(-3, 328);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(295, 50);
+            this.button4.Size = new System.Drawing.Size(277, 42);
             this.button4.TabIndex = 6;
             this.button4.Text = "Seguridad";
             this.button4.UseVisualStyleBackColor = false;
@@ -163,7 +196,7 @@
             this.Submenu.Controls.Add(this.botonreportecliente);
             this.Submenu.Controls.Add(this.botonreporteproducto);
             this.Submenu.Controls.Add(this.botonreporteventa);
-            this.Submenu.Location = new System.Drawing.Point(63, 471);
+            this.Submenu.Location = new System.Drawing.Point(68, 404);
             this.Submenu.Name = "Submenu";
             this.Submenu.Size = new System.Drawing.Size(235, 127);
             this.Submenu.TabIndex = 5;
@@ -236,7 +269,7 @@
             this.botonReporte.ForeColor = System.Drawing.Color.White;
             this.botonReporte.Image = ((System.Drawing.Image)(resources.GetObject("botonReporte.Image")));
             this.botonReporte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.botonReporte.Location = new System.Drawing.Point(0, 412);
+            this.botonReporte.Location = new System.Drawing.Point(0, 388);
             this.botonReporte.Name = "botonReporte";
             this.botonReporte.Size = new System.Drawing.Size(298, 53);
             this.botonReporte.TabIndex = 4;
@@ -254,9 +287,9 @@
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(3, 279);
+            this.button3.Location = new System.Drawing.Point(6, 265);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(289, 60);
+            this.button3.Size = new System.Drawing.Size(271, 47);
             this.button3.TabIndex = 3;
             this.button3.Text = "Facturas";
             this.button3.UseVisualStyleBackColor = false;
@@ -272,9 +305,9 @@
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(-3, 218);
+            this.button2.Location = new System.Drawing.Point(0, 207);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(298, 55);
+            this.button2.Size = new System.Drawing.Size(277, 39);
             this.button2.TabIndex = 2;
             this.button2.Text = "Clientes";
             this.button2.UseVisualStyleBackColor = false;
@@ -292,7 +325,7 @@
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(3, 148);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(292, 64);
+            this.button1.Size = new System.Drawing.Size(271, 43);
             this.button1.TabIndex = 1;
             this.button1.Text = "Productos";
             this.button1.UseVisualStyleBackColor = false;
@@ -304,7 +337,7 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(3, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(300, 80);
+            this.pictureBox1.Size = new System.Drawing.Size(300, 64);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -313,43 +346,11 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.lbfecha);
-            this.panel2.Controls.Add(this.lbhora);
-            this.panel2.Location = new System.Drawing.Point(10, 554);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(209, 86);
-            this.panel2.TabIndex = 9;
-            // 
-            // lbfecha
-            // 
-            this.lbfecha.AutoSize = true;
-            this.lbfecha.BackColor = System.Drawing.Color.Transparent;
-            this.lbfecha.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbfecha.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbfecha.Location = new System.Drawing.Point(3, 43);
-            this.lbfecha.Name = "lbfecha";
-            this.lbfecha.Size = new System.Drawing.Size(74, 24);
-            this.lbfecha.TabIndex = 8;
-            this.lbfecha.Text = "label2";
-            // 
-            // lbhora
-            // 
-            this.lbhora.AutoSize = true;
-            this.lbhora.BackColor = System.Drawing.Color.Transparent;
-            this.lbhora.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbhora.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbhora.Location = new System.Drawing.Point(3, 5);
-            this.lbhora.Name = "lbhora";
-            this.lbhora.Size = new System.Drawing.Size(74, 24);
-            this.lbhora.TabIndex = 7;
-            this.lbhora.Text = "label1";
-            // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1026, 741);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -359,11 +360,11 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MenuPrincipal2_Load);
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.SubmenuUsuario.ResumeLayout(false);
             this.Submenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
