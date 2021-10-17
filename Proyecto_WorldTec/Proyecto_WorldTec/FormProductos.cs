@@ -35,8 +35,6 @@ namespace Proyecto_WorldTec
         private TextBox existenciaTextBox;
         private TextBox idTextBox;
         private ToolStripButton toolStripButtonCancelar;
-        private Button button1;
-        private PictureBox imgproductos;
         private TextBox precioTextBox;
 
         public FormProductos()
@@ -76,8 +74,6 @@ namespace Proyecto_WorldTec
             this.existenciaTextBox = new System.Windows.Forms.TextBox();
             this.idTextBox = new System.Windows.Forms.TextBox();
             this.precioTextBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.imgproductos = new System.Windows.Forms.PictureBox();
             activoLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
             existenciaLabel = new System.Windows.Forms.Label();
@@ -86,51 +82,55 @@ namespace Proyecto_WorldTec
             ((System.ComponentModel.ISupportInitialize)(this.listaProductoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaProductoBindingNavigator)).BeginInit();
             this.listaProductoBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgproductos)).BeginInit();
             this.SuspendLayout();
             // 
             // activoLabel
             // 
             activoLabel.AutoSize = true;
+            activoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             activoLabel.Location = new System.Drawing.Point(30, 157);
             activoLabel.Name = "activoLabel";
-            activoLabel.Size = new System.Drawing.Size(40, 13);
+            activoLabel.Size = new System.Drawing.Size(48, 16);
             activoLabel.TabIndex = 1;
             activoLabel.Text = "Activo:";
             // 
             // descripcionLabel
             // 
             descripcionLabel.AutoSize = true;
+            descripcionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             descripcionLabel.Location = new System.Drawing.Point(30, 77);
             descripcionLabel.Name = "descripcionLabel";
-            descripcionLabel.Size = new System.Drawing.Size(66, 13);
+            descripcionLabel.Size = new System.Drawing.Size(83, 16);
             descripcionLabel.TabIndex = 3;
-            descripcionLabel.Text = "Descripcion:";
+            descripcionLabel.Text = "Descripción:";
             // 
             // existenciaLabel
             // 
             existenciaLabel.AutoSize = true;
+            existenciaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             existenciaLabel.Location = new System.Drawing.Point(30, 103);
             existenciaLabel.Name = "existenciaLabel";
-            existenciaLabel.Size = new System.Drawing.Size(58, 13);
+            existenciaLabel.Size = new System.Drawing.Size(72, 16);
             existenciaLabel.TabIndex = 5;
             existenciaLabel.Text = "Existencia:";
             // 
             // idLabel
             // 
             idLabel.AutoSize = true;
+            idLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             idLabel.Location = new System.Drawing.Point(30, 46);
             idLabel.Name = "idLabel";
-            idLabel.Size = new System.Drawing.Size(19, 13);
+            idLabel.Size = new System.Drawing.Size(22, 16);
             idLabel.TabIndex = 7;
             idLabel.Text = "Id:";
             // 
             // precioLabel
             // 
             precioLabel.AutoSize = true;
+            precioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             precioLabel.Location = new System.Drawing.Point(30, 129);
             precioLabel.Name = "precioLabel";
-            precioLabel.Size = new System.Drawing.Size(40, 13);
+            precioLabel.Size = new System.Drawing.Size(50, 16);
             precioLabel.TabIndex = 9;
             precioLabel.Text = "Precio:";
             // 
@@ -275,6 +275,7 @@ namespace Proyecto_WorldTec
             this.toolStripButtonCancelar.Size = new System.Drawing.Size(57, 22);
             this.toolStripButtonCancelar.Text = "Cancelar";
             this.toolStripButtonCancelar.Visible = false;
+            this.toolStripButtonCancelar.Click += new System.EventHandler(this.toolStripButtonCancelar_Click);
             // 
             // activoCheckBox
             // 
@@ -289,15 +290,16 @@ namespace Proyecto_WorldTec
             // descripcionTextBox
             // 
             this.descripcionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaProductoBindingSource, "Descripcion", true));
-            this.descripcionTextBox.Location = new System.Drawing.Point(102, 74);
+            this.descripcionTextBox.Location = new System.Drawing.Point(119, 77);
             this.descripcionTextBox.Name = "descripcionTextBox";
-            this.descripcionTextBox.Size = new System.Drawing.Size(104, 20);
+            this.descripcionTextBox.Size = new System.Drawing.Size(173, 20);
             this.descripcionTextBox.TabIndex = 4;
             // 
             // existenciaTextBox
             // 
             this.existenciaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaProductoBindingSource, "Existencia", true));
             this.existenciaTextBox.Location = new System.Drawing.Point(102, 100);
+            this.existenciaTextBox.MaxLength = 10;
             this.existenciaTextBox.Name = "existenciaTextBox";
             this.existenciaTextBox.Size = new System.Drawing.Size(104, 20);
             this.existenciaTextBox.TabIndex = 6;
@@ -305,7 +307,7 @@ namespace Proyecto_WorldTec
             // idTextBox
             // 
             this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaProductoBindingSource, "Id", true));
-            this.idTextBox.Location = new System.Drawing.Point(102, 43);
+            this.idTextBox.Location = new System.Drawing.Point(58, 45);
             this.idTextBox.Name = "idTextBox";
             this.idTextBox.ReadOnly = true;
             this.idTextBox.Size = new System.Drawing.Size(104, 20);
@@ -315,35 +317,14 @@ namespace Proyecto_WorldTec
             // 
             this.precioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaProductoBindingSource, "Precio", true));
             this.precioTextBox.Location = new System.Drawing.Point(102, 126);
+            this.precioTextBox.MaxLength = 12;
             this.precioTextBox.Name = "precioTextBox";
             this.precioTextBox.Size = new System.Drawing.Size(104, 20);
             this.precioTextBox.TabIndex = 10;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(339, 152);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 32);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Examinar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // imgproductos
-            // 
-            this.imgproductos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.imgproductos.Location = new System.Drawing.Point(339, 34);
-            this.imgproductos.Name = "imgproductos";
-            this.imgproductos.Size = new System.Drawing.Size(131, 108);
-            this.imgproductos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgproductos.TabIndex = 12;
-            this.imgproductos.TabStop = false;
-            // 
             // FormProductos
             // 
             this.ClientSize = new System.Drawing.Size(1029, 731);
-            this.Controls.Add(this.imgproductos);
-            this.Controls.Add(this.button1);
             this.Controls.Add(activoLabel);
             this.Controls.Add(this.activoCheckBox);
             this.Controls.Add(descripcionLabel);
@@ -364,7 +345,6 @@ namespace Proyecto_WorldTec
             ((System.ComponentModel.ISupportInitialize)(this.listaProductoBindingNavigator)).EndInit();
             this.listaProductoBindingNavigator.ResumeLayout(false);
             this.listaProductoBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgproductos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -391,13 +371,15 @@ namespace Proyecto_WorldTec
             var producto = (ProductosBL.Producto)listaProductoBindingSource.Current;
 
             var resultado = _productos.GuardarProducto(producto);
-            if (resultado == true)
+            if (resultado.Exitoso ==true)
             {
                 listaProductoBindingSource.ResetBindings(false);
+                HabilitarDeshabilitarBotones(true);
+                MessageBox.Show("Registro Guardado con Exito", "Guardado");
             }
             else
             {
-                MessageBox.Show("Ocurrio un Error al guardear el producto");
+                MessageBox.Show(resultado.Mensaje);
             }
 
         }
@@ -406,41 +388,61 @@ namespace Proyecto_WorldTec
         {
             _productos.AgregarProducto();
             listaProductoBindingSource.MoveLast();
+            HabilitarDeshabilitarBotones(false);
+
+        }
+
+        private void HabilitarDeshabilitarBotones(bool valor)
+        {
+            bindingNavigatorMoveFirstItem.Enabled = valor;
+            bindingNavigatorMoveLastItem.Enabled = valor;
+            bindingNavigatorMovePreviousItem.Enabled = valor;
+            bindingNavigatorMoveNextItem.Enabled = valor;
+            bindingNavigatorPositionItem.Enabled = valor;
+
+            bindingNavigatorAddNewItem.Enabled = valor;
+            bindingNavigatorDeleteItem.Enabled = valor;
+
+            toolStripButtonCancelar.Visible =!valor;
+
         }
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
+            
+
             if (idTextBox.Text != "")
             {
-                var id = Convert.ToInt32(idTextBox.Text);
-                var resultado = _productos.EliminarProducto(id);
-                if (resultado == true)
+                var resultado = MessageBox.Show("¿Desea eliminar el registro ?", "Eliminando Producto", MessageBoxButtons.YesNo);
+                if (resultado == DialogResult.Yes)
                 {
-                    listaProductoBindingSource.ResetBindings(false);
+                    var id = Convert.ToInt32(idTextBox.Text);
+                    Eliminar(id);
                 }
-                else
-                {
-                    MessageBox.Show("Ocurrio un error al eliminar este registro");
                 }
 
+        }
+
+        private void Eliminar(int id)
+        {
+          
+            var resultado = _productos.EliminarProducto(id);
+            if (resultado == true)
+            {
+                listaProductoBindingSource.ResetBindings(false);
+            }
+            else
+            {
+                MessageBox.Show("Ocurrio un error al eliminar este registro");
             }
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void toolStripButtonCancelar_Click(object sender, EventArgs e)
         {
-            OpenFileDialog getImage = new OpenFileDialog();
-            getImage.InitialDirectory = "C:\\";
-            getImage.Filter = "Archivos de imagen (*.jpg)(*.jpeg)|*.jpg;*.jpeg|PNG(*.png)|*.png|GIF(*.gif)|*.gif";
+            HabilitarDeshabilitarBotones(true);
+            Eliminar(0);
 
-            if (getImage.ShowDialog() == DialogResult.OK) 
-            {
-                imgproductos.ImageLocation = getImage.FileName;
-            }
-            else
-            {
-                MessageBox.Show("No se ha seleccionado ningun archivo");
-            }
         }
     }
 }

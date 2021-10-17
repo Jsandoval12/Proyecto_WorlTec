@@ -57,13 +57,21 @@ namespace BL.Tecnologia
         {
             return ListaProducto;
         }
-        public bool GuardarProducto(Producto producto)
+        public resultado GuardarProducto(Producto producto)
         {
+            var resultado = validar(producto);
+
+            if (resultado.Exitoso == false)
+            {
+                return resultado;
+            }
+
             if (producto.Id == 0)
             {
                 producto.Id = ListaProducto.Max(item => item.Id) + 1;
             }
-            return true;
+            resultado.Exitoso = true;
+            return resultado;
         }
         public void AgregarProducto()
         {
@@ -85,8 +93,42 @@ namespace BL.Tecnologia
             }
             return false;
         }
-        
-    public class Producto
+
+        private resultado validar(Producto producto)
+        {
+
+            var resultado = new resultado();
+            resultado.Exitoso = true;
+
+            if (string.IsNullOrEmpty(producto.Descripcion) == true)
+            {
+                resultado.Mensaje = "No se permiten descripciones Vacias";
+                resultado.Exitoso = false;
+            }
+
+            if (producto.Existencia < 0)
+            {
+                resultado.Mensaje = "La existencia debe ser mayor que cero";
+                resultado.Exitoso = false;
+            }
+
+            if (producto.Precio < 0)
+            {
+                resultado.Mensaje = "el precio debe ser mayor que cero";
+                resultado.Exitoso = false;
+            }
+
+            return resultado;
+        }
+
+
+        public class resultado
+        {
+            public bool Exitoso { get; set; }
+            public string Mensaje { get; set; }
+        }
+
+        public class Producto
     {
             public int Id { get; set; }
             public string Descripcion { get; set; }
