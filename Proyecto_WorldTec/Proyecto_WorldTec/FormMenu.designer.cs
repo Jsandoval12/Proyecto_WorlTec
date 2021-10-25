@@ -49,14 +49,11 @@
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SubmenuUsuario.SuspendLayout();
             this.Submenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -351,33 +348,6 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // panel3
-            // 
-            this.panel3.AllowDrop = true;
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.AutoSize = true;
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(43)))), ((int)(((byte)(99)))));
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel3.Controls.Add(this.panel4);
-            this.panel3.Location = new System.Drawing.Point(303, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(723, 741);
-            this.panel3.TabIndex = 5;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
-            // 
-            // panel4
-            // 
-            this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
-            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel4.Location = new System.Drawing.Point(144, 330);
-            this.panel4.Name = "panel4";
-            this.panel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.panel4.Size = new System.Drawing.Size(515, 102);
-            this.panel4.TabIndex = 0;
-            // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -385,7 +355,6 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1026, 741);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
@@ -399,9 +368,7 @@
             this.SubmenuUsuario.ResumeLayout(false);
             this.Submenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -426,7 +393,5 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lbfecha;
         private System.Windows.Forms.Label lbhora;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
     }
 }
