@@ -52,7 +52,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AreaBL.cs" />
     <Compile Include="Contexto.cs" />
+    <Compile Include="Datosdeinicio.cs" />
     <Compile Include="ProductosBL.cs" />
     <Compile Include="SeguridadBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -60,6 +62,14 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Area.datasource" />
+    <None Include="Properties\DataSources\AreaBL.datasource" />
+    <None Include="Properties\DataSources\Contexto.datasource" />
+    <None Include="Properties\DataSources\Datosdeinicio.datasource" />
+    <None Include="Properties\DataSources\ProductosBL.datasource" />
+    <None Include="Properties\DataSources\ProductosBL.Producto.datasource" />
+    <None Include="Properties\DataSources\ProductosBL.resultado.datasource" />
+    <None Include="Properties\DataSources\SeguridadBL.datasource" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
