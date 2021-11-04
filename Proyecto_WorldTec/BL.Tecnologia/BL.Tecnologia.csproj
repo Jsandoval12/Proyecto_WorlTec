@@ -53,8 +53,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AreaBL.cs" />
+    <Compile Include="CategoriasBL.cs" />
+    <Compile Include="ClientesBL.cs" />
     <Compile Include="Contexto.cs" />
     <Compile Include="Datosdeinicio.cs" />
+    <Compile Include="FacturaBL.cs" />
     <Compile Include="ProductosBL.cs" />
     <Compile Include="SeguridadBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

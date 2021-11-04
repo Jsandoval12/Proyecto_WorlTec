@@ -11,6 +11,7 @@ namespace BL.Tecnologia
 {
    public class Contexto : DbContext
     {
+        
         public Contexto(): base("Venta_Tecnologica")
         {
 
@@ -23,7 +24,8 @@ namespace BL.Tecnologia
         }
         public DbSet<Producto> Productos { get; set; }
         public DbSet<Area> Area { get; set; }
-
-
+        public DbSet<Factura> Factura { get; set; }
+        public DbSet<Categoria> Categorias { get; set; }
+        public DbSet<Cliente> Clientes { get; set; }
     }
 }
