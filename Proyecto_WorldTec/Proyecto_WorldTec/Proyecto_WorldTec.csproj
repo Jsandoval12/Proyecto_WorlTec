@@ -136,6 +136,8 @@
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\BL.Tecnologia.AreaBL.datasource" />
+    <None Include="Properties\DataSources\BL.Tecnologia.ClientesBL.datasource" />
+    <None Include="Properties\DataSources\BL.Tecnologia.FacturaBL.datasource" />
     <None Include="Properties\DataSources\BL.Tecnologia.ProductosBL+Producto.datasource" />
     <None Include="Properties\DataSources\BL.Tecnologia.ProductosBL.datasource" />
     <None Include="Properties\DataSources\BL.Tecnologia.SeguridadBL.datasource" />

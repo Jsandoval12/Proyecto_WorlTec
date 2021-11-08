@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BL.Tecnologia
 {
-    class CategoriasBL
+ public class CategoriasBL
     {
         Contexto _contexto;
 

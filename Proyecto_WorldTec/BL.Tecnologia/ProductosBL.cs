@@ -65,8 +65,16 @@ namespace BL.Tecnologia
         private resultado validar(Producto producto)
         {
 
+
             var resultado = new resultado();
             resultado.Exitoso = true;
+
+            if (producto == null)
+            {
+                resultado.Mensaje = "Agruegue un producto validos";
+                resultado.Exitoso = false;
+                return resultado;
+            }
 
             if (string.IsNullOrEmpty(producto.Descripcion) == true)
             {

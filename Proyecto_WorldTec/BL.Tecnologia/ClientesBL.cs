@@ -5,13 +5,11 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static BL.Tecnologia.ProductosBL;
 
 namespace BL.Tecnologia
 {
-    class ClientesBL
+    public class ClientesBL
     {
-
         Contexto _contexto;
 
         public BindingList<Cliente> ListaClientes { get; set; }
@@ -39,7 +37,7 @@ namespace BL.Tecnologia
             }
         }
 
-        public resultado GuardarCliente(Cliente cliente)
+        public Resultado GuardarCliente(Cliente cliente)
         {
             var resultado = Validar(cliente);
             if (resultado.Exitoso == false)
@@ -73,9 +71,9 @@ namespace BL.Tecnologia
             return false;
         }
 
-        private resultado Validar(Cliente cliente)
+        private Resultado Validar(Cliente cliente)
         {
-            var resultado = new resultado();
+            var resultado = new Resultado();
             resultado.Exitoso = true;
 
             if (cliente == null)
@@ -94,18 +92,23 @@ namespace BL.Tecnologia
 
             return resultado;
         }
+
+
+    }
+
+    public class Resultado
+    {
+        public bool Exitoso { get; set; }
+        public string Mensaje { get; set; }
     }
 
     public class Cliente
     {
         public int Id { get; set; }
         public string Nombre { get; set; }
+        public string Direccion { get; set; }
+        public string  Telefono { get; set; }
+        public string Correo { get; set; }
         public bool Activo { get; set; }
-
-        public Cliente()
-        {
-            Activo = true;
-
-        }
     }
 }
