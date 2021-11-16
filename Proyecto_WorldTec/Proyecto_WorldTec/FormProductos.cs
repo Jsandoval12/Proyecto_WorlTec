@@ -210,8 +210,8 @@ namespace Proyecto_WorldTec
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
+            this.bindingNavigatorCountItem.Text = "de {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
             // bindingNavigatorMoveFirstItem
@@ -419,6 +419,7 @@ namespace Proyecto_WorldTec
             // 
             // FormProductos
             // 
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1029, 731);
             this.Controls.Add(areaIdLabel);
             this.Controls.Add(this.areaIdComboBox);
@@ -436,6 +437,7 @@ namespace Proyecto_WorldTec
             this.Controls.Add(precioLabel);
             this.Controls.Add(this.precioTextBox);
             this.Controls.Add(this.listaProductoBindingNavigator);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(303, 3);
             this.Name = "FormProductos";

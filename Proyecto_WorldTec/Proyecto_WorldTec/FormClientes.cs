@@ -57,6 +57,7 @@ namespace Proyecto_WorldTec
             System.Windows.Forms.Label telefonoLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormClientes));
             this.listaClientesBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.listaClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -76,7 +77,6 @@ namespace Proyecto_WorldTec
             this.direccionTextBox = new System.Windows.Forms.TextBox();
             this.correoTextBox = new System.Windows.Forms.TextBox();
             this.telefonoTextBox = new System.Windows.Forms.TextBox();
-            this.listaClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             activoLabel = new System.Windows.Forms.Label();
             idLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
@@ -169,9 +169,13 @@ namespace Proyecto_WorldTec
             this.listaClientesBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.listaClientesBindingNavigator.Name = "listaClientesBindingNavigator";
             this.listaClientesBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.listaClientesBindingNavigator.Size = new System.Drawing.Size(635, 25);
+            this.listaClientesBindingNavigator.Size = new System.Drawing.Size(1029, 25);
             this.listaClientesBindingNavigator.TabIndex = 0;
             this.listaClientesBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // listaClientesBindingSource
+            // 
+            this.listaClientesBindingSource.DataSource = typeof(BL.Tecnologia.Cliente);
             // 
             // bindingNavigatorCountItem
             // 
@@ -327,13 +331,10 @@ namespace Proyecto_WorldTec
             this.telefonoTextBox.Size = new System.Drawing.Size(100, 20);
             this.telefonoTextBox.TabIndex = 12;
             // 
-            // listaClientesBindingSource
-            // 
-            this.listaClientesBindingSource.DataSource = typeof(BL.Tecnologia.Cliente);
-            // 
             // FormClientes
             // 
-            this.ClientSize = new System.Drawing.Size(635, 242);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1029, 731);
             this.Controls.Add(telefonoLabel);
             this.Controls.Add(this.telefonoTextBox);
             this.Controls.Add(correoLabel);

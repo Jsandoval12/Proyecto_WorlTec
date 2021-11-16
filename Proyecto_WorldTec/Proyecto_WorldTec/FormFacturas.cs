@@ -226,15 +226,15 @@ namespace Proyecto_WorldTec
             this.listaFacturaBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.listaFacturaBindingNavigator.Name = "listaFacturaBindingNavigator";
             this.listaFacturaBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.listaFacturaBindingNavigator.Size = new System.Drawing.Size(796, 25);
+            this.listaFacturaBindingNavigator.Size = new System.Drawing.Size(1029, 25);
             this.listaFacturaBindingNavigator.TabIndex = 0;
             this.listaFacturaBindingNavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
+            this.bindingNavigatorCountItem.Text = "de {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
             // bindingNavigatorMoveFirstItem
@@ -502,7 +502,8 @@ namespace Proyecto_WorldTec
             // 
             // FormFacturas
             // 
-            this.ClientSize = new System.Drawing.Size(796, 461);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1029, 731);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);

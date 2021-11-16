@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BL.Tecnologia;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,27 +16,16 @@ namespace Proyecto_WorldTec
         public FormReporteClientes()
         {
             InitializeComponent();
-        }
 
-        private void InitializeComponent()
-        {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormReporteClientes));
-            this.SuspendLayout();
-            // 
-            // FormReporteClientes
-            // 
-            this.ClientSize = new System.Drawing.Size(816, 395);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FormReporteClientes";
-            this.Text = "Reporte de Clientes";
-            this.Load += new System.EventHandler(this.FormReporteClientes_Load);
-            this.ResumeLayout(false);
+            var _clientesBL = new ClientesBL();
+            var bindingSource = new BindingSource();
+            bindingSource.DataSource = _clientesBL.ObtenerClientes();
 
-        }
+            var reporte = new ReporteClientes();
+            reporte.SetDataSource(bindingSource);
 
-        private void FormReporteClientes_Load(object sender, EventArgs e)
-        {
-
+            crystalReportViewer1.ReportSource = reporte;
+            crystalReportViewer1.RefreshReport();
         }
     }
 }

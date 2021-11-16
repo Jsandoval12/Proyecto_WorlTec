@@ -14,6 +14,7 @@ namespace Proyecto_WorldTec
     public partial class FormLogin : Form
     {
         SeguridadBL _seguridad;
+
         public FormLogin()
         {
             InitializeComponent();
@@ -41,20 +42,24 @@ namespace Proyecto_WorldTec
             usuario = textBox1.Text;
             contrasena = textBox2.Text;
 
+            button1.Enabled = false;
+            button1.Text = "Verificando!!!!";
+            Application.DoEvents();
+
             var resultado = _seguridad.Autorizar(usuario, contrasena);
-            
+
             if (resultado == true)
             {
-                MessageBox.Show("Bienvenido al Sistema" + " " + usuario);
+                MessageBox.Show("Bienvenido al Sistema  " + textBox1.Text);
                 this.Close();
             }
-            else if ( resultado == false)
+            else
             {
-                MessageBox.Show("Usuario o Contraseña incorrecta");
-                textBox1.Text = "";
-                textBox2.Text = "";
-
+                MessageBox.Show("Usuario o contraseña incorrecta");
             }
+
+            button1.Enabled = true;
+            button1.Text = "Ingresar";
         }
 
         private void FormLogin_Load(object sender, EventArgs e)

@@ -8,19 +8,27 @@ namespace BL.Tecnologia
 {
     public class SeguridadBL
     {
-       public bool Autorizar( string usuario, string contrasena)
+        Contexto _contexto;
+        public SeguridadBL()
         {
-            if (usuario == "Admin21" && contrasena == "unahvs" || (usuario == "Jonathan Sandoval" && contrasena == "jona123") || (usuario == "Carlos Fernandez" && contrasena == "carlos123"))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            _contexto = new Contexto();
         }
 
-       
+        public bool Autorizar(string usuario, string contrasena)
+        {
+            var usuarios = _contexto.Usuarios.ToList();
+
+            foreach (var usuarioDB in usuarios)
+            {
+                if (usuario == "admin" && contrasena == "1111" ||usuario == usuarioDB.Nombre && contrasena == usuarioDB.Contraseña  )
+                {
+                    return true;
+                }
+
+            }
+
+            return false;
+        }
 
     }
 }
