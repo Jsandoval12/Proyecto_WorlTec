@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BL.Tecnologia;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,6 +29,7 @@ namespace Proyecto_WorldTec
         {
             var formlogin = new FormLogin();
             formlogin.ShowDialog();
+           toolStripStatusLabel1.Text = "Usuario:  " + Utilidades.NombreUsuario ;
         }
 
         private void MenuPrincipal2_Load(object sender, EventArgs e)
@@ -134,6 +136,11 @@ namespace Proyecto_WorldTec
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
         {
 
         }

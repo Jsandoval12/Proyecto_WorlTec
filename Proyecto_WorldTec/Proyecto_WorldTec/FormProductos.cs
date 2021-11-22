@@ -45,6 +45,8 @@ namespace Proyecto_WorldTec
         private BindingSource productoBindingSource;
         private BindingSource listadeAreasBindingSource;
         private ComboBox areaIdComboBox;
+        private TextBox textBox1;
+        private Button button3;
         private TextBox precioTextBox;
 
         public FormProductos()
@@ -98,6 +100,8 @@ namespace Proyecto_WorldTec
             this.productoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listadeAreasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.areaIdComboBox = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
             activoLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
             existenciaLabel = new System.Windows.Forms.Label();
@@ -210,8 +214,8 @@ namespace Proyecto_WorldTec
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
-            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
             // bindingNavigatorMoveFirstItem
@@ -363,9 +367,9 @@ namespace Proyecto_WorldTec
             // 
             this.imagenPictureBox.BackColor = System.Drawing.Color.Silver;
             this.imagenPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.listaProductoBindingSource, "Imagen", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.imagenPictureBox.Location = new System.Drawing.Point(340, 28);
+            this.imagenPictureBox.Location = new System.Drawing.Point(343, 45);
             this.imagenPictureBox.Name = "imagenPictureBox";
-            this.imagenPictureBox.Size = new System.Drawing.Size(181, 130);
+            this.imagenPictureBox.Size = new System.Drawing.Size(171, 130);
             this.imagenPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imagenPictureBox.TabIndex = 12;
             this.imagenPictureBox.TabStop = false;
@@ -373,7 +377,7 @@ namespace Proyecto_WorldTec
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(350, 176);
+            this.button1.Location = new System.Drawing.Point(343, 181);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 5;
@@ -383,7 +387,7 @@ namespace Proyecto_WorldTec
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(446, 176);
+            this.button2.Location = new System.Drawing.Point(439, 181);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 6;
@@ -417,10 +421,29 @@ namespace Proyecto_WorldTec
             this.areaIdComboBox.TabIndex = 15;
             this.areaIdComboBox.ValueMember = "ID";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(630, 43);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 16;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(549, 43);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 17;
+            this.button3.Text = "Buscar";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // FormProductos
             // 
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1029, 731);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(areaIdLabel);
             this.Controls.Add(this.areaIdComboBox);
             this.Controls.Add(this.button2);
@@ -598,6 +621,24 @@ namespace Proyecto_WorldTec
         private void imagenPictureBox_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            string buscar = textBox1.Text;
+
+            
+
+            if (buscar == " ")
+            {
+                listaProductoBindingSource.DataSource = _productos.ObtenerProducto();
+            }
+            else
+            {
+                listaProductoBindingSource.DataSource = _productos.ObtenerProducto(buscar);
+            }
+            listaProductoBindingSource.ResetBindings(false);
         }
     }
 }

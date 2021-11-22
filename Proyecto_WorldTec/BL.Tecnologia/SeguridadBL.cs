@@ -14,7 +14,7 @@ namespace BL.Tecnologia
             _contexto = new Contexto();
         }
 
-        public bool Autorizar(string usuario, string contrasena)
+        public Usuario Autorizar(string usuario, string contrasena)
         {
             var usuarios = _contexto.Usuarios.ToList();
 
@@ -22,12 +22,12 @@ namespace BL.Tecnologia
             {
                 if (usuario == "admin" && contrasena == "1111" ||usuario == usuarioDB.Nombre && contrasena == usuarioDB.Contraseña  )
                 {
-                    return true;
+                    return usuarioDB;
                 }
 
             }
 
-            return false;
+            return null;
         }
 
     }

@@ -36,6 +36,10 @@ namespace Proyecto_WorldTec
         private void button1_Click(object sender, EventArgs e)
         {
 
+            Login();
+        }
+        private void Login()
+        {
             string usuario;
             string contrasena;
 
@@ -48,9 +52,10 @@ namespace Proyecto_WorldTec
 
             var resultado = _seguridad.Autorizar(usuario, contrasena);
 
-            if (resultado == true)
+            if (resultado != null)
             {
                 MessageBox.Show("Bienvenido al Sistema  " + textBox1.Text);
+                Utilidades.NombreUsuario = resultado.Nombre ;
                 this.Close();
             }
             else
@@ -65,6 +70,23 @@ namespace Proyecto_WorldTec
         private void FormLogin_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter && textBox2.Text != " ")
+            {
+                textBox2.Focus();
+            }
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter && textBox2.Text != " " && textBox2.Text != " ")
+            {
+                textBox2.Focus();
+                Login();
+            }
         }
     }
 }
